@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        
+        <!-- Left side: Transaction History -->
+        <div class="transaction-history">
+            <h3>Transaction History</h3>
+            <ul id="transactionHistory"></ul>
+        </div>
+
+        <!-- Right side: Account Info and Balance -->
+        <div class="account-section">
+            <div class="account-info">
+                <h2>Account Name: Rayan</h2> <!-- You can replace with a dynamic username -->
+            </div>
+            <div class="balance-section">
+                <p>Your current balance is: $<span id="balance">0.00</span></p>
+                <div class="transaction-section">
+                    <input type="number" id="amount" placeholder="Enter amount" min="0" required>
+                    <button id="depositBtn">Deposit</button>
+                    <button id="withdrawBtn">Withdraw</button>
+                </div>
+            </div>
+            <button id="logout" class="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* General styles for all pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('bank-background.jpg'); /* Replace with your bank-themed image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Shared container styles for Login, Signup, and Dashboard */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    padding: 15px;
+    font-size: 1.1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for the dashboard page */
+.dashboard-container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "balance transactions";
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 20px;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header-section {
+    grid-area: header;
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+}
+
+.balance-section {
+    grid-area: balance;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.transactions-section {
+    grid-area: transactions;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+.transactions-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.transaction-deposit {
+    color: green;
+}
+
+.transaction-withdraw {
+    color: red;
+}
+
+/* Ensure responsiveness */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+    .dashboard-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "balance"
+            "transactions";
+    }
+}
